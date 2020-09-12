@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Schedules</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span>ADMIN</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin.html"><i
+                                class="fas fa-table"></i><span>Employee</span></a>
+                        <a class="nav-link active" href="schedule.html"><i
+                                class="fas fa-table"></i><span>Schedule</span></a><a class="nav-link active"
+                            href="records.html"><i class="fas fa-table"></i><span>Records</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
+                        id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-primary m-0 font-weight-bold"
+                                style="font-size: 24px;border-bottom-style: solid;">Schedule</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4"></h3>
+                    <div class="card shadow">
+                        <div class="card-body" style="margin-bottom: 0;">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                                aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Time</th>
+                                            <th>Lunch</th>
+                                            <th>1st Break</th>
+                                            <th>2nd Break</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td>9:00 - 17:00</td>
+                                            <td>12:00 - 13:00</td>
+                                            <td>10:15 - 10:30<br></td>
+                                            <td>15:00 - 15:15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td>9:00 - 17:00</td>
+                                            <td>12:00 - 13:00<br></td>
+                                            <td>10:15 - 10:30<br></td>
+                                            <td>15:00 - 15:15<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wednesday</td>
+                                            <td>9:00 - 17:00<br></td>
+                                            <td>12:00 - 13:00<br></td>
+                                            <td>10:15 - 10:30<br></td>
+                                            <td>15:00 - 15:15<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thursday</td>
+                                            <td>9:00 - 17:00<br></td>
+                                            <td>12:00 - 13:00<br></td>
+                                            <td>10:15 - 10:30<br></td>
+                                            <td>15:00 - 15:15<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friday</td>
+                                            <td>9:00 - 17:00<br></td>
+                                            <td>12:00 - 13:00<br></td>
+                                            <td>10:15 - 10:30<br></td>
+                                            <td>15:00 - 15:15<br></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Day</strong></td>
+                                            <td><strong>Time</strong></td>
+                                            <td><strong>Lunch</strong></td>
+                                            <td><strong>1st Break</strong></td>
+                                            <td><strong>2nd Break</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
