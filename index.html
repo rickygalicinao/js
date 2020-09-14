@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Employee</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+</head>
+
+
+
+<body id="page-top">
+
+    <div id="responsive">
+        <h2>
+            This app is not available in small screens.
+        </h2>
+    </div>
+
+    <div id="wrapper">
+
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a id="clockNav" class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                    href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span>CLOCK IN</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item">
+                        <a id="empNav" class="nav-link active" href="#"><i
+                                class="fas fa-table"></i><span>Employee</span></a>
+                        <a id="schedNav" class="nav-link active" href="#"><i
+                                class="fas fa-table"></i><span>Schedule</span></a>
+                        <a id="recNav" class="nav-link active" href="#"><i
+                                class="fas fa-table"></i><span>Records</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
+                        id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+
+
+        <!-- ADMIN SECTION -->
+        <div class=" d-flex flex-column empSec" id="content-wrapper">
+            <div id="content" class="d-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <form class="d-flex flex-column" id="employeeForm">
+                                <p class="text-primary m-0 font-weight-bold"
+                                    style="font-size: 24px;border-bottom-style: solid;">Employee</p>
+                                <div style="margin-top: 25px;margin-bottom: 25px;">
+                                    <input class="form-control" type="text" name="employeeID" placeholder="Employee ID">
+                                    <input class="form-control" type="text" name="name" placeholder="Name">
+                                    <input class="form-control" type="text" name="age" placeholder="Age">
+                                    <input class="form-control" type="text" name="startDate" placeholder="Start Date">
+                                    <input class="form-control" type="text" name="salary" placeholder="Salary">
+                                </div>
+                                <div class="d-flex flex-shrink-1 justify-content-around flex-wrap">
+                                    <div id="adding" class="">
+                                        <button id="add-button" class="btn btn-primary" type="submit"
+                                            style="width: 150px;">ADD</button>
+
+                                        <button id="clear-button" class="btn btn-primary" type="submit"
+                                            style="width: 150px;">CLEAR</button>
+
+                                    </div>
+
+                                    <div id="approving" class="d-none">
+                                        <button id="ok-button" class="btn btn-info" type="submit"
+                                            style="width: 150px;">OK</button>
+
+                                        <button id="cancel-button" class="btn btn-secondary" type="submit"
+                                            style="width: 150px;">CANCEL</button>
+
+                                    </div>
+
+                                    <button id="update-button" class="btn btn-primary" type="submit"
+                                        style="width: 150px;">UPDATE</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4"></h3>
+                    <div class="card shadow">
+                        <div class="card-body" style="margin-bottom: 0;">
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                                        <label>Show&nbsp;<select
+                                                class="form-control form-control-sm custom-select custom-select-sm">
+                                                <option value="10" selected="">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="text-md-right dataTables_filter" id="dataTable_filter"><label>
+                                            <input id="search" type="text" class="form-control form-control-sm"
+                                                aria-controls="dataTable" placeholder="Enter the Employee ID"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="empDataTable" role="grid"
+                                aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Employee ID</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-empID="101237808">
+                                            <td><input type="radio" name="radio"></td>
+                                            <td>101237808</td>
+                                            <td>Caesar Vance</td>
+                                            <td>21</td>
+                                            <td>2011/12/12<br></td>
+                                            <td>$106,450</td>
+                                        </tr>
+                                        <tr data-empID="101237809">
+                                            <td><input type="radio" name="radio"></td>
+                                            <td>101237809</td>
+                                            <td>Cara Stevens</td>
+                                            <td>46</td>
+                                            <td>2011/12/06<br></td>
+                                            <td>$145,600</td>
+                                        </tr>
+                                        <tr data-empID="101237810">
+                                            <td><input type="radio" name="radio"></td>
+                                            <td>101237810</td>
+                                            <td>Cedric Kelly</td>
+                                            <td>22</td>
+                                            <td>2012/03/29<br></td>
+                                            <td>$433,060</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLOCK IN AND CLOCK OUT SECTION -->
+        <div class="clockInSec">
+            <div>
+                <div class="col">
+                    <div class="row" style="height: auto;">
+                        <div class="col d-flex d-lg-flex flex-column justify-content-center align-items-center justify-content-lg-center align-items-lg-center"
+                            style="height: 100vh;max-height: -1px;">
+                            <h1 id="time" style="margin: 0px;font-size: 138px;">HH:MM:SS</h1>
+
+                            <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal"
+                                    style="width: 150px;height: auto;background: rgb(62,100,211);border-style: none;">TICK</a>
+                                <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Please enter your Employee ID:</h4><button type="button"
+                                                    class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">×</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="text" name="clockID" id="clockID"
+                                                    style="display:block; margin: 0 auto; margin-bottom: 15px; text-align:center; height:40px;">
+                                                <div class="modal-footer">
+                                                    <button id="enter-button" data-dismiss="modal"
+                                                        class="btn btn-primary" type="button">Enter</button>
+
+                                                    <button class="btn btn-light" data-dismiss="modal"
+                                                        type="button">Close</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- RECORD SECTION -->
+            <div class=" flex-column recordSec" id="content-wrapper ">
+                <div id="content" class="d-none">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-primary m-0 font-weight-bold"
+                                    style="font-size: 24px;border-bottom-style: solid;">Records</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <h3 class="text-dark mb-4"></h3>
+                        <div class="card shadow">
+                            <div class="card-body" style="margin-bottom: 0;">
+                                <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                                    aria-describedby="dataTable_info">
+                                    <table class="table my-0" id="recordTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Employee ID</th>
+                                                <th>Time-In</th>
+                                                <th>Time-Out</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- <tr>
+                                                <td>9/12/2020</td>
+                                                <td>101237808<br></td>
+                                                <td>08:48:43</td>
+                                                <td>17:00<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9/12/2020</td>
+                                                <td>101237809<br></td>
+                                                <td>08:48:43</td>
+                                                <td>17:00<br></td>
+                                            </tr> -->
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SCHEDULE SECTION -->
+            <div class="d-flex flex-column scheduleSec" id="content-wrapper ">
+                <div id="content" class="d-none">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-primary m-0 font-weight-bold"
+                                    style="font-size: 24px;border-bottom-style: solid;">Schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <h3 class="text-dark mb-4"></h3>
+                        <div class="card shadow">
+                            <div class="card-body" style="margin-bottom: 0;">
+                                <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                                    aria-describedby="dataTable_info">
+                                    <table class="table my-0" id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                                <th>Time</th>
+                                                <th>Lunch</th>
+                                                <th>1st Break</th>
+                                                <th>2nd Break</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Monday</td>
+                                                <td>9:00 - 17:00</td>
+                                                <td>12:00 - 13:00</td>
+                                                <td>10:15 - 10:30<br></td>
+                                                <td>15:00 - 15:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tuesday</td>
+                                                <td>9:00 - 17:00</td>
+                                                <td>12:00 - 13:00<br></td>
+                                                <td>10:15 - 10:30<br></td>
+                                                <td>15:00 - 15:15<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wednesday</td>
+                                                <td>9:00 - 17:00<br></td>
+                                                <td>12:00 - 13:00<br></td>
+                                                <td>10:15 - 10:30<br></td>
+                                                <td>15:00 - 15:15<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thursday</td>
+                                                <td>9:00 - 17:00<br></td>
+                                                <td>12:00 - 13:00<br></td>
+                                                <td>10:15 - 10:30<br></td>
+                                                <td>15:00 - 15:15<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Friday</td>
+                                                <td>9:00 - 17:00<br></td>
+                                                <td>12:00 - 13:00<br></td>
+                                                <td>10:15 - 10:30<br></td>
+                                                <td>15:00 - 15:15<br></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+        <script src="assets/js/theme.js"></script>
+        <script type="module" src="./app.js"></script>
+
+</body>
+
+</html>
