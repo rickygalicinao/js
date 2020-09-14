@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  #responsive {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  div,
+  nav,
+  .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  #responsive {
+    display: none;
+  }
+}

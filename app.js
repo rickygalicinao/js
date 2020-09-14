@@ -333,7 +333,12 @@ const addRecord = (xrecord) => {
 };
 
 enterBtn.addEventListener("click", function (e) {
-  if (clockInput.value != "") {
+  // find if employee is in the record
+  const isEmpExist = employees.find((recordEmp) => {
+    return clockInput.value == recordEmp.empID;
+  });
+
+  if (clockInput.value != "" && isEmpExist != undefined) {
     let record = {
       date: clockDate(),
       employeeID: clockInput.value.trim(),
@@ -350,9 +355,8 @@ enterBtn.addEventListener("click", function (e) {
       );
     });
 
-    console.log(recordExist);
-
     // check if Employee exist
+
     if (recordExist) {
       function changeValue(id, timeout) {
         for (var i in records) {
@@ -364,7 +368,6 @@ enterBtn.addEventListener("click", function (e) {
       }
 
       changeValue(record.employeeID, t());
-      console.log(records);
       showRecords();
       alert(`Successfully Clock Out!`);
       // add data to the sched HTML
@@ -383,7 +386,8 @@ enterBtn.addEventListener("click", function (e) {
     //Not closing modal
     enterBtn.removeAttribute("data-dismiss", "modal");
 
-    alert("Please enter your employee ID");
+    alert("Please enter a valid employee ID");
+    clockInput.value = "";
   }
 });
 
