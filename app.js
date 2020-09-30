@@ -186,7 +186,32 @@ function t() {
 t();
 window.setInterval(t, 1000);
 
-// TimeStamp
+// DATE
+function cdate() {
+  const d = new Date();
+  const date = d.getDate();
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const year = d.getFullYear();
+
+  document.getElementById("date").innerHTML = `${
+    month[d.getMonth()]
+  } ${date},  ${year}`;
+}
+
+cdate();
 
 // cancel Employee update
 clearBtn.addEventListener("click", function (e) {
@@ -349,7 +374,7 @@ enterBtn.addEventListener("click", function (e) {
     // find if Employee already exist and timeout is ---
     let recordExist = records.find((recordArr) => {
       return (
-        record.timeOut === "-" &&
+        recordArr.timeOut === "-" &&
         record.date === recordArr.date &&
         record.employeeID === recordArr.employeeID
       );
@@ -362,6 +387,8 @@ enterBtn.addEventListener("click", function (e) {
         for (var i in records) {
           if (records[i].employeeID == id) {
             records[i].timeOut = timeout;
+            record.timeOut = timeout;
+            console.log(record);
             break; //Stop this loop, we found it!
           }
         }
@@ -400,3 +427,4 @@ if (records.length == 0) {
   // concatenate new row to the table
   recTable.innerHTML += row;
 }
+

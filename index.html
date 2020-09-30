@@ -36,8 +36,8 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item">
-                        <a id="empNav" class="nav-link active" href="#"><i
-                                class="fas fa-table"></i><span>Employee</span></a>
+                        <a id="empNav" class="nav-link active" href="#"><span
+                                class="fas fa-table"></span><span>Employee</span></a>
                         <a id="schedNav" class="nav-link active" href="#"><i
                                 class="fas fa-table"></i><span>Schedule</span></a>
                         <a id="recNav" class="nav-link active" href="#"><i
@@ -58,12 +58,17 @@
                             <form class="d-flex flex-column" id="employeeForm">
                                 <p class="text-primary m-0 font-weight-bold"
                                     style="font-size: 24px;border-bottom-style: solid;">Employee</p>
-                                <div style="margin-top: 25px;margin-bottom: 25px;">
-                                    <input class="form-control" type="text" name="employeeID" placeholder="Employee ID">
-                                    <input class="form-control" type="text" name="name" placeholder="Name">
-                                    <input class="form-control" type="text" name="age" placeholder="Age">
-                                    <input class="form-control" type="text" name="startDate" placeholder="Start Date">
-                                    <input class="form-control" type="text" name="salary" placeholder="Salary">
+                                <div style="  margin-top: 25px;margin-bottom: 25px;">
+                                    <input class="form-control col-8 mb-1" type="text" pattern="\d*" maxlength="11"
+                                        name="employeeID" placeholder="Employee ID">
+                                    <input class="form-control col-8 mb-1" type="text" maxlength="70" name="name"
+                                        placeholder="Name">
+                                    <input class="form-control col-6 mb-1" type="text" pattern="\d*" maxlength="2"
+                                        name="age" placeholder="Age">
+                                    <input class="form-control col-6 mb-1" type="date" name="startDate"
+                                        placeholder="Start Date">
+                                    <input class="form-control col-6 mb-1" type="text" pattern="\d*" maxlength="7"
+                                        name="salary" placeholder="Salary">
                                 </div>
                                 <div class="d-flex flex-shrink-1 justify-content-around flex-wrap">
                                     <div id="adding" class="">
@@ -170,6 +175,7 @@
                     <div class="row" style="height: auto;">
                         <div class="col d-flex d-lg-flex flex-column justify-content-center align-items-center justify-content-lg-center align-items-lg-center"
                             style="height: 100vh;max-height: -1px;">
+                            <h2 id="date">DATE</h2>
                             <h1 id="time" style="margin: 0px;font-size: 138px;">HH:MM:SS</h1>
 
                             <div><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" href="#myModal"
