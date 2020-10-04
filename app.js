@@ -134,18 +134,20 @@ const clockNav = document.querySelector("#clockNav");
 const empNav = document.querySelector("#empNav");
 const schedNav = document.querySelector("#schedNav");
 const recNav = document.querySelector("#recNav");
+const aboutUsNav = document.querySelector("#aboutUs");
 
-//sections
+//sections function (HIDE  AND SHOW)
 const clockInSec = document.querySelector(".clockInSec div");
 const empSec = document.querySelector(".empSec div");
 const recordSec = document.querySelector(".recordSec div");
 const scheduleSec = document.querySelector(".scheduleSec div");
+const aboutSec = document.querySelector(".aboutUs div");
 
 clockNav.addEventListener("click", function (e) {
   empSec.classList.add("d-none");
   recordSec.classList.add("d-none");
   scheduleSec.classList.add("d-none");
-
+  aboutSec.classList.add("d-none");
   clockInSec.classList.remove("d-none");
 });
 
@@ -153,7 +155,7 @@ empNav.addEventListener("click", function (e) {
   clockInSec.classList.add("d-none");
   recordSec.classList.add("d-none");
   scheduleSec.classList.add("d-none");
-
+  aboutSec.classList.add("d-none");
   empSec.classList.remove("d-none");
 });
 
@@ -161,7 +163,7 @@ schedNav.addEventListener("click", function (e) {
   clockInSec.classList.add("d-none");
   recordSec.classList.add("d-none");
   empSec.classList.add("d-none");
-
+  aboutSec.classList.add("d-none");
   scheduleSec.classList.remove("d-none");
 });
 
@@ -169,10 +171,17 @@ recNav.addEventListener("click", function (e) {
   clockInSec.classList.add("d-none");
   empSec.classList.add("d-none");
   scheduleSec.classList.add("d-none");
-
+  aboutSec.classList.add("d-none");
   recordSec.classList.remove("d-none");
 });
 
+aboutUsNav.addEventListener("click", function (e) {
+  clockInSec.classList.add("d-none");
+  empSec.classList.add("d-none");
+  scheduleSec.classList.add("d-none");
+  recordSec.classList.add("d-none");
+  aboutSec.classList.remove("d-none");
+});
 // TIME
 function t() {
   const d = new Date();
@@ -427,4 +436,3 @@ if (records.length == 0) {
   // concatenate new row to the table
   recTable.innerHTML += row;
 }
-
